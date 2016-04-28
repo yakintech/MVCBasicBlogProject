@@ -45,11 +45,17 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-6">
-                        @using (Html.BeginForm())
+                      
+                        @using (Html.BeginForm("AddBlogPost","BlogPost",FormMethod.Post,new {@enctype = "multipart/form-data" }))
                         {
                             <div class="form-group">
                                 @Html.LabelFor(x => x.drpCategories)
                                 @Html.DropDownList("CategoryID", Model.drpCategories, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.AnaResim)
+                                @*Name özelliğine modelinin özelliğini yaz (Anaresim)*@
+                                <input type="file" name="AnaResim" multiple   />
                             </div>
                             <div class="form-group">
                                 @Html.LabelFor(x => x.Title)

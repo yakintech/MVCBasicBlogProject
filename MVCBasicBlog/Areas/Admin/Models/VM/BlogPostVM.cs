@@ -19,6 +19,9 @@ namespace MVCBasicBlog.Areas.Admin.Models.VM
         [Display(Name="İçerik")]
         public string Content { get; set; }
 
+        [Display(Name ="Ana Resim")]
+        public HttpPostedFileBase AnaResim { get; set; }
+
         public int CategoryID { get; set; }
     }
 }

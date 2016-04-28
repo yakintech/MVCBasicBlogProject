@@ -2,6 +2,7 @@
 using MVCBasicBlog.Models.ORM.Entity;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -21,7 +22,7 @@ namespace MVCBasicBlog.Areas.Admin.Controllers
 
         }
 
-       //[OverrideActionFilters]
+        //[OverrideActionFilters]
         public ActionResult AddBlogPost()
         {
 
@@ -39,17 +40,34 @@ namespace MVCBasicBlog.Areas.Admin.Controllers
                 blogpost.Content = model.Content;
                 blogpost.CategoryID = model.CategoryID;
 
+
+                foreach (string name in Request.Files)
+                {
+                    string number = Guid.NewGuid().ToString();
+                    string ext = Path.GetExtension(model.AnaResim.FileName);
+                    model.AnaResim = Request.Files[name];
+                   
+                    if (ext == ".jpg" || ext == ".png" || ext == ".jpeg")
+                    {
+                        string filename = number + model.AnaResim.FileName;
+                        blogpost.ImagePath = filename;
+                        model.AnaResim.SaveAs(Server.MapPath("~/Areas/Admin/Content/images/BlogPost/" + number + model.AnaResim.FileName));
+
+                    }
+                }
+
+
                 db.BlogPost.Add(blogpost);
                 db.SaveChanges();
 
                 ViewBag.IslemDurum = 1;
 
-                return View(drpCategories()); 
+                return View(drpCategories());
             }
             else
             {
                 ViewBag.IslemDurum = 3;
-                return View(drpCategories()); 
+                return View(drpCategories());
             }
 
         }

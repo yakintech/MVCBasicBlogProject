@@ -11,7 +11,6 @@ namespace MVCBasicBlog.Areas.Admin.Controllers
 {
     public class LoginController : Controller
     {
-        //
         private BlogContext db = new BlogContext();
         public ActionResult Index()
         {
