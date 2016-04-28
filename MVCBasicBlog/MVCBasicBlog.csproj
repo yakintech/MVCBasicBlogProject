@@ -843,9 +843,12 @@
     <Compile Include="Areas\Admin\Controllers\AdminUserController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\BlogPostController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HataController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Models\Attributes\LoginControl.cs" />
+    <Compile Include="Areas\Admin\Models\Attributes\RolControl.cs" />
     <Compile Include="Areas\Admin\Models\Types\Enums\EnumMessages.cs" />
+    <Compile Include="Areas\Admin\Models\Types\Enums\EnumRoles.cs" />
     <Compile Include="Areas\Admin\Models\Types\Messages\ValidationMessages.cs" />
     <Compile Include="Areas\Admin\Models\VM\AdminUserVM.cs" />
     <Compile Include="Areas\Admin\Models\VM\BaseVM.cs" />
@@ -861,6 +864,7 @@
     <Compile Include="Models\ORM\Entity\BaseEntity.cs" />
     <Compile Include="Models\ORM\Entity\BlogPost.cs" />
     <Compile Include="Models\ORM\Entity\Category.cs" />
+    <Compile Include="Models\ORM\Entity\Role.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1200,6 +1204,7 @@
     <Content Include="ckeditor\skins\moono\readme.md" />
     <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Hata\YetkisizErisim.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

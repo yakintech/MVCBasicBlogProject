@@ -13,6 +13,8 @@ namespace MVCBasicBlog.Models.ORM.Entity
 
         public string Password { get; set; }
 
+        public string Roles { get; set; }
+
         public DateTime? LastLoginDate { get; set; }
     }
 }

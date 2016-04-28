@@ -27,5 +27,7 @@ namespace MVCBasicBlog.Models.ORM.Context
 
         public DbSet<Category> Categories { get; set; }
 
+        public DbSet<Role> Roles { get; set; }
+
     }
 }

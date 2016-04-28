@@ -1,4 +1,6 @@
-﻿using MVCBasicBlog.Areas.Admin.Models.VM;
+﻿using MVCBasicBlog.Areas.Admin.Models.Attributes;
+using MVCBasicBlog.Areas.Admin.Models.Types.Enums;
+using MVCBasicBlog.Areas.Admin.Models.VM;
 using MVCBasicBlog.Models.ORM.Entity;
 using System;
 using System.Collections.Generic;
@@ -8,8 +10,11 @@ using System.Web.Mvc;
 
 namespace MVCBasicBlog.Areas.Admin.Controllers
 {
+    
+    [RolControl(EnumRoles.AddAdminUser)]
     public class AdminUserController : BaseAdminController
     {
+        
         public ActionResult AddAdminUser()
         {
             return View();
