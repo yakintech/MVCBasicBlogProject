@@ -535,6 +535,15 @@
     <Content Include="Areas\Admin\Content\bower_components\raphael\raphael.js" />
     <Content Include="Areas\Admin\Content\css\sb-admin-2.css" />
     <Content Include="Areas\Admin\Content\css\timeline.css" />
+    <Content Include="Assets\css\bootstrap.css" />
+    <Content Include="Assets\css\bootstrap.min.css" />
+    <Content Include="Assets\css\business-casual.css" />
+    <Content Include="Assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\img\bg.jpg" />
+    <Content Include="Assets\img\intro-pic.jpg" />
+    <Content Include="Assets\img\slide-1.jpg" />
+    <Content Include="Assets\img\slide-2.jpg" />
+    <Content Include="Assets\img\slide-3.jpg" />
     <Content Include="ckeditor\adapters\jquery.js" />
     <Content Include="ckeditor\build-config.js" />
     <Content Include="ckeditor\ckeditor.js" />
@@ -831,7 +840,10 @@
     <Content Include="ckeditor\skins\moono\images\spinner.gif" />
     <Content Include="ckeditor\styles.js" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\flot-data.js" />
+    <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\morris-data.js" />
     <Content Include="Scripts\sb-admin-2.js" />
     <Content Include="Web.config" />
@@ -857,6 +869,10 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605011334221_new-migration.cs" />
+    <Compile Include="Migrations\201605011334221_new-migration.Designer.cs">
+      <DependentUpon>201605011334221_new-migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ORM\Context\BlogContext.cs" />
@@ -1205,6 +1221,17 @@
     <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Hata\YetkisizErisim.cshtml" />
+    <Content Include="Assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\Shared\BlogMasterLayout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Blog.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Shared\Partial\_header.cshtml" />
+    <Content Include="Views\Shared\Partial\_slider.cshtml" />
+    <Content Include="Views\Shared\Partial\_footer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1216,6 +1243,11 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Content\images\BlogPost\" />
     <Folder Include="Areas\Admin\Views\BaseAdmin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605011334221_new-migration.resx">
+      <DependentUpon>201605011334221_new-migration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

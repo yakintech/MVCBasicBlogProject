@@ -11,11 +11,31 @@ namespace MVCBasicBlog.Controllers
     public class HomeController : Controller
     {
 
-        private BlogContext db = new BlogContext();
+        //private BlogContext db = new BlogContext();
+        //public ActionResult Index()
+        //{
+        //    BlogPost blogpost = db.BlogPost.FirstOrDefault(x => x.ID == 4);
+        //    return View(blogpost);
+        //}
+
         public ActionResult Index()
         {
-            BlogPost blogpost = db.BlogPost.FirstOrDefault(x => x.ID == 4);
-            return View(blogpost);
+            return View();
+        }
+
+        public ActionResult About()
+        {
+            return View();
+        }
+
+        public ActionResult Blog()
+        {
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            return View();
         }
     }
 }

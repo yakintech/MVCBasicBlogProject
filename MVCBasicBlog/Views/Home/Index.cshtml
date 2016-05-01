@@ -1,18 +1,41 @@
-﻿
-@{
-    Layout = null;
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/BlogMasterLayout.cshtml";
 }
-@model MVCBasicBlog.Models.ORM.Entity.BlogPost
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div> 
-        <img src="/Areas/Admin/Content/images/BlogPost/@Model.ImagePath" />
+
+@Html.Partial("/Views/Shared/Partial/_slider.cshtml");
+
+<div class="row">
+    <div class="box">
+        <div class="col-lg-12">
+            <hr>
+            <h2 class="intro-text text-center">
+                <strong>This will be the header</strong>
+            </h2>
+            <hr>
+            <img class="img-responsive img-border img-left" src="/assets/img/intro-pic.jpg" alt="">
+            <hr class="visible-xs">
+
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lectus lorem, posuere posuere mattis quis, consequat at diam. Quisque vehicula consectetur elit. Sed eget ante mattis massa ultrices lacinia. Duis ut erat vehicula purus condimentum fermentum id at nisl. Integer non felis et nunc porta rhoncus. Nunc bibendum rhoncus tortor vitae fringilla. Nam scelerisque est eget orci finibus sollicitudin. Integer at lobortis purus.
+            </p>
+
+            <p>
+                Fusce malesuada lacus eget fermentum vestibulum. Nunc varius mauris dictum ante bibendum rhoncus. Maecenas ullamcorper bibendum risus ut dapibus. Integer fringilla molestie tortor, dapibus volutpat urna placerat eget. <a href="http://google.com"> Curabitur sodales</a> enim vel libero vestibulum, vel pharetra massa varius. Suspendisse ultrices venenatis porttitor. Maecenas mattis ultricies magna, cursus scelerisque enim ullamcorper eu. Nam at nunc ex. Ut ut nisl urna. Nunc vehicula justo vitae accumsan commodo. Nam sit amet nunc eu lacus dignissim tempor eget in tortor. Integer nec nunc suscipit, auctor purus in, viverra nunc. Vivamus auctor posuere ipsum, vitae aliquam ligula vehicula fringilla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed lacinia sed velit nec auctor.
+            </p>
+
+           <p>
+               Donec aliquam leo congue dolor vestibulum, in pharetra augue semper. Vestibulum pellentesque nec ligula ac ullamcorper. Pellentesque luctus venenatis sapien at dapibus. Donec ac ipsum vel leo interdum tempus. Aenean consequat, dolor nec lobortis pretium, sem ipsum iaculis elit, quis lacinia velit ante sit amet dolor. Morbi a ligula urna. Nam vel accumsan ante, a blandit nisl.
+           </p>
+
+            <p>
+            Aenean sed ante arcu. Integer sem eros, molestie vitae nibh vel, suscipit iaculis urna. Phasellus nec dui mattis, dictum urna vel, pellentesque leo. Vestibulum nec massa consequat, tincidunt magna sit amet, condimentum urna. Cras et ligula vitae purus fringilla vehicula. Curabitur at rutrum est. Fusce egestas mauris eu nunc blandit egestas. Curabitur ultricies, nisi id sollicitudin accumsan, felis nunc eleifend odio, id facilisis neque turpis a dolor. Cras malesuada elementum massa, vel ornare tellus suscipit id. Suspendisse rutrum pharetra orci ut gravida. Maecenas volutpat, dolor ac placerat pharetra, nisl nisl vehicula lacus, vel imperdiet felis nulla ut risus. Nulla lobortis nisl id magna maximus euismod. Curabitur rhoncus ante vel tellus euismod, facilisis lobortis arcu iaculis. Sed tellus purus, fermentum eu lorem nec, fringilla placerat leo. Ut convallis rhoncus nunc quis placerat. Vestibulum magna nisi, tincidunt eu vulputate eu, scelerisque a nisl.
+            </p>
+
+            <p>
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque dapibus tincidunt nisi, ac hendrerit neque porta in. Integer quis quam quam. Morbi non eros elit. Quisque pharetra malesuada urna, in fringilla mauris blandit sed. Curabitur malesuada sodales quam, a fringilla arcu commodo sit amet. Nulla sed ipsum sed elit pulvinar finibus. In varius convallis quam vitae posuere. Etiam euismod, leo nec rhoncus pellentesque, mauris urna placerat neque, nec maximus velit justo quis orci. Vestibulum eget risus non erat efficitur ultricies a quis velit. Sed molestie, purus faucibus porta pretium, elit diam venenatis felis, nec porta turpis lectus sit amet elit. Nullam placerat nisi eleifend tincidunt tincidunt. Vivamus bibendum nibh lacus, non eleifend turpis dignissim maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum vitae posuere lectus, facilisis tincidunt libero. Morbi eu mollis libero, id pharetra orci.
+            </p>
+        </div>
     </div>
-</body>
-</html>
+</div>
