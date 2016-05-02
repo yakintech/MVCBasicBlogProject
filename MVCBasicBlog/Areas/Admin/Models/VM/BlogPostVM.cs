@@ -13,13 +13,13 @@ namespace MVCBasicBlog.Areas.Admin.Models.VM
         [Display(Name = "Kategoriler")]
         public IEnumerable<SelectListItem> drpCategories { get; set; }
 
-        [Display(Name="Başlık"),Required]
+        [Display(Name = "Başlık"), Required]
         public string Title { get; set; }
 
-        [Display(Name="İçerik")]
+        [Display(Name = "İçerik")]
         public string Content { get; set; }
 
-        [Display(Name ="Ana Resim")]
+        [Display(Name = "Ana Resim")]
         public HttpPostedFileBase AnaResim { get; set; }
 
         public int CategoryID { get; set; }

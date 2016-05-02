@@ -48,6 +48,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -839,9 +847,11 @@
     <Content Include="ckeditor\skins\moono\images\refresh.png" />
     <Content Include="ckeditor\skins\moono\images\spinner.gif" />
     <Content Include="ckeditor\styles.js" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\custom\DeleteRecordTable.js" />
     <Content Include="Scripts\flot-data.js" />
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\morris-data.js" />
@@ -855,6 +865,7 @@
     <Compile Include="Areas\Admin\Controllers\AdminUserController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\BlogPostController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ContactMessagesController.cs" />
     <Compile Include="Areas\Admin\Controllers\HataController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Models\Attributes\LoginControl.cs" />
@@ -866,13 +877,10 @@
     <Compile Include="Areas\Admin\Models\VM\BaseVM.cs" />
     <Compile Include="Areas\Admin\Models\VM\BlogPostVM.cs" />
     <Compile Include="Areas\Admin\Models\VM\LoginVM.cs" />
+    <Compile Include="Controllers\BaseUIController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605011334221_new-migration.cs" />
-    <Compile Include="Migrations\201605011334221_new-migration.Designer.cs">
-      <DependentUpon>201605011334221_new-migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ORM\Context\BlogContext.cs" />
@@ -880,7 +888,10 @@
     <Compile Include="Models\ORM\Entity\BaseEntity.cs" />
     <Compile Include="Models\ORM\Entity\BlogPost.cs" />
     <Compile Include="Models\ORM\Entity\Category.cs" />
+    <Compile Include="Models\ORM\Entity\Contact.cs" />
     <Compile Include="Models\ORM\Entity\Role.cs" />
+    <Compile Include="Models\VM\ContactVM.cs" />
+    <Compile Include="Models\VM\SiteBaseVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1232,6 +1243,9 @@
     <Content Include="Views\Shared\Partial\_header.cshtml" />
     <Content Include="Views\Shared\Partial\_slider.cshtml" />
     <Content Include="Views\Shared\Partial\_footer.cshtml" />
+    <Content Include="Views\Home\UserContact.cshtml" />
+    <Content Include="Areas\Admin\Views\ContactMessages\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ContactMessages\Partial\ContactModal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1243,11 +1257,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Content\images\BlogPost\" />
     <Folder Include="Areas\Admin\Views\BaseAdmin\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605011334221_new-migration.resx">
-      <DependentUpon>201605011334221_new-migration.cs</DependentUpon>
-    </EmbeddedResource>
+    <Folder Include="Views\BaseUI\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

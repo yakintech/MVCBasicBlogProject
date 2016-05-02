@@ -1,5 +1,6 @@
 ﻿using MVCBasicBlog.Models.ORM.Context;
 using MVCBasicBlog.Models.ORM.Entity;
+using MVCBasicBlog.Models.VM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,15 +9,10 @@ using System.Web.Mvc;
 
 namespace MVCBasicBlog.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseUIController
     {
 
-        //private BlogContext db = new BlogContext();
-        //public ActionResult Index()
-        //{
-        //    BlogPost blogpost = db.BlogPost.FirstOrDefault(x => x.ID == 4);
-        //    return View(blogpost);
-        //}
+       
 
         public ActionResult Index()
         {
@@ -33,9 +29,37 @@ namespace MVCBasicBlog.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult UserContact()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult UserContact(ContactVM model)
+        {
+
+            //Hata mesajları yazılır. Viewbag işlem durumları
+            if (ModelState.IsValid)
+            {
+                for (int i = 0; i < 100; i++)
+                {
+                    Contact contact = new Contact();
+                    contact.EMail = model.EMail;
+                    contact.Phone = model.Phone;
+                    contact.Message = model.Message;
+                    contact.Name = model.Name;
+
+                    db.Contacts.Add(contact);
+                    db.SaveChanges();
+                }
+
+                return View();
+            }
+            else
+            {
+                return View();
+            }
+           
         }
     }
 }

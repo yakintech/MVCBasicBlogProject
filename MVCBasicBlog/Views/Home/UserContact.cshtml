@@ -48,13 +48,13 @@
                 </h2>
                 <hr>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, vitae, distinctio, possimus repudiandae cupiditate ipsum excepturi dicta neque eaque voluptates tempora veniam esse earum sapiente optio deleniti consequuntur eos voluptatem.</p>
-                @using (Html.BeginForm("Contact", "Home", FormMethod.Post))
+                @using (Html.BeginForm("UserContact", "Home", FormMethod.Post))
                 {
                     <div class="row">
                         <div class="form-group col-lg-4">
                             @Html.LabelFor(x => x.Name)
                             @Html.TextBoxFor(x => x.Name)
-                         
+
                         </div>
                         <div class="form-group col-lg-4">
                             @Html.LabelFor(x => x.EMail)
@@ -67,7 +67,7 @@
                         <div class="clearfix"></div>
                         <div class="form-group col-lg-12">
                             @Html.LabelFor(x => x.Message)
-                            @Html.TextAreaFor(x => x.Message,new { @class = "form-control" })
+                            @Html.TextAreaFor(x => x.Message, new { @class = "form-control" })
                         </div>
                         <div class="form-group col-lg-12">
                             <button type="submit" class="btn btn-default">Gönder</button>
