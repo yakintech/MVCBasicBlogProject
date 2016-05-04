@@ -9,7 +9,7 @@ namespace MVCBasicBlog.Controllers
 {
     public class BaseUIController : Controller
     {
-        //
+ 
         public BlogContext db;
         public BaseUIController()
         {
