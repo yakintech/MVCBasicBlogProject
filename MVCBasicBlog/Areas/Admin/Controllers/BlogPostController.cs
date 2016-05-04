@@ -1,4 +1,5 @@
-﻿using MVCBasicBlog.Areas.Admin.Models.VM;
+﻿using MVCBasicBlog.Areas.Admin.Models.Services.TextServices;
+using MVCBasicBlog.Areas.Admin.Models.VM;
 using MVCBasicBlog.Models.ORM.Entity;
 using System;
 using System.Collections.Generic;
@@ -39,6 +40,7 @@ namespace MVCBasicBlog.Areas.Admin.Controllers
                 blogpost.Title = model.Title;
                 blogpost.Content = model.Content;
                 blogpost.CategoryID = model.CategoryID;
+                blogpost.Slug = Slugify.Generate(model.Title);
 
 
                 foreach (string name in Request.Files)

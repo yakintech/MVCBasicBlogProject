@@ -11,6 +11,8 @@ namespace MVCBasicBlog.Models.ORM.Entity
 
         public string Description { get; set; }
 
+        public string Slug { get; set; }
+
         public virtual List<BlogPost> BlogPost { get; set; }
     }
 }

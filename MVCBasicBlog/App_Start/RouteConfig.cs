@@ -13,6 +13,23 @@ namespace MVCBasicBlog
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+                        routes.MapRoute(
+               name: "BlogCat",
+               url: "Blog/{category}",
+               defaults: new { controller = "Blog", action = "BlogCategory",
+                   category = UrlParameter.Optional,
+                  }
+           );
+
+            routes.MapRoute(
+               name: "BlogPost",
+               url: "blog/{category}/{title}",
+               defaults: new { controller = "Blog", action = "Index",
+                   category = UrlParameter.Optional,
+                   title = UrlParameter.Optional,}
+           );
+
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
