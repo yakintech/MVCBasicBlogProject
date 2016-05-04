@@ -31,5 +31,7 @@ namespace MVCBasicBlog.Models.ORM.Context
 
         public DbSet<Contact> Contacts{ get; set; }
 
+        public DbSet<ELMAH_Error> ELMAH_Errors { get; set; }
+
     }
 }
